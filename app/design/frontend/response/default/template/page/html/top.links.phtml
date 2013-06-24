@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--
+<?php
 /**
  * Magento
  *
@@ -19,20 +18,22 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category    Mage
- * @package     Mage_CurrencySymbol
+ * @category    design
+ * @package     base_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
--->
-<config>
-    <modules>
-        <Mage_CurrencySymbol>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Widget/>
-            </depends>
-        </Mage_CurrencySymbol>
-    </modules>
-</config>
+?>
+<?php
+/**
+ * @deprecated after 1.4.0.1
+ */
+?>
+<?php if($toplinks && is_array($toplinks)): ?>
+<ul class="links">
+    <?php echo $this->getChildHtml() ?>
+    <?php foreach($toplinks as $_toplink): ?>
+    <li<?php if($_toplink['first']||$_toplink['last']): ?> class="<?php if($_toplink['first']): ?>first<?php endif; ?><?php if($_toplink['last']): ?> last<?php endif; ?>"<?php endif; ?> <?php echo $_toplink['liParams'] ?>><?php echo $_toplink['beforeText'] ?><a <?php echo $_toplink['aParams'] ?>><?php echo $_toplink['innerText'] ?></a><?php echo $_toplink['afterText'] ?></li>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

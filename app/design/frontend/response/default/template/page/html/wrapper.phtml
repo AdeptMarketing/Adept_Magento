@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<!--
+<?php
 /**
  * Magento
  *
@@ -19,20 +18,33 @@
  * versions in the future. If you wish to customize Magento for your
  * needs please refer to http://www.magentocommerce.com for more information.
  *
- * @category    Mage
- * @package     Mage_CurrencySymbol
+ * @category    design
+ * @package     base_default
  * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
--->
-<config>
-    <modules>
-        <Mage_CurrencySymbol>
-            <active>true</active>
-            <codePool>core</codePool>
-            <depends>
-                <Mage_Widget/>
-            </depends>
-        </Mage_CurrencySymbol>
-    </modules>
-</config>
+?>
+<?php
+/**
+ * @deprecated  after 1.4.0.0-alpha3
+ */
+
+/**
+ * This template is for generic wrapper purposes, including ajax.updater loaded blocks
+ *
+ * Usage in layout xml files:
+ * <block type="core/template" template="page/html/wrapper.phtml">
+ *    <action method="setId"><id>some-custom-identificator</id></action>
+ *
+ *    <!-- optional -->
+ *    <action method="setTag"><tag>span</tag></action> <!-- div is used if not specified -->
+ *    <action method="setParams"><params>class="custom-class"</params></action>
+ *
+ *    <!-- insert wrapped blocks here -->
+ * </block>
+ */
+?>
+<?php $_tag = $this->hasTag() ? $this->getTag() : "div" ?>
+<<?php echo $_tag?> id="<?php echo $this->getId()?>" <?php echo $this->getParams()?>>
+<?php echo $this->getChildHtml()?>
+</<?php echo $_tag?>>
