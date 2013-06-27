@@ -41,6 +41,6 @@
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_contact')->toHtml() ?> 
 		</div><!--contact info-->
        
-        <address class="sixteen columns alpha omega"><?php echo $this->getCopyright() ?></address>
+        <address class="sixteen columns alpha omega">&copy; <?php echo date('Y'); ?> <?php echo $this->getCopyright() ?></address>
 	</footer>
 </div><!--Container-->
