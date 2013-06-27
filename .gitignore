@@ -36,6 +36,8 @@ app/etc/local.xml.template
 app/etc/local.xml
 app/.htaccess
 app/locale/
+app/code/local/Adeptmarketing
+app/etc/modules/Adeptmarketing_Commercebug.xml
 app/Mage.php
 cron.php
 cron.sh
@@ -49,6 +51,7 @@ index.php.sample
 install.php
 js/blank.html
 js/calendar/
+js/commercebug/
 js/enterprise/
 js/extjs/
 js/firebug/
