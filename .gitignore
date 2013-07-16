@@ -111,3 +111,5 @@ skin/install/
 var/
 .DS_Store
 .htaccess.sample
+magmi
+media/catalog
