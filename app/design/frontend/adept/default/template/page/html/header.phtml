@@ -44,14 +44,14 @@
         	<nav class="user">
         		<ul>
         			<li>
-                        <?
+                        <?php
                         $session = Mage::getSingleton('customer/session', array('name'=>'frontend'));
                         if( ($session->isLoggedIn())) {
                         // Login
-                            ?><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" title="Logout">Logout</a><?
+                            ?><a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>" title="Logout">Logout</a><?php
                         } else {
                         // Not Login
-                            ?><a href="/customer/account/login/" title="Sign in">Sign in</a><?
+                            ?><a href="/customer/account/login/" title="Sign in">Sign in</a><?php
                         }
                         ?>
                     </li>

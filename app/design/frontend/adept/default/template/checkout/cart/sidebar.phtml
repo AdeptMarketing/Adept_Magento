@@ -35,12 +35,12 @@
     <?php $_cartQty = $this->getSummaryCount() ?>
     <?php if ($_cartQty>0): ?>
             <?php if ($_cartQty==1): ?>
-                <?php echo $this->__('<a href="%s">Shopping Cart (1)</a>', $this->getUrl('checkout/cart')) ?>
+                <?php echo $this->__('<a href="%s">Shopping Cart <span class="count">1</span></a>', $this->getUrl('checkout/cart')) ?>
             <?php else: ?>
-                <?php echo $this->__('<a href="%s">Shopping Cart (%s)</a>', $this->getUrl('checkout/cart'), $_cartQty) ?>
+                <?php echo $this->__('<a href="%s">Shopping Cart <span class="count">%s</span></a>', $this->getUrl('checkout/cart'), $_cartQty) ?>
             <?php endif ?>
     <?php else: ?>
-        <?php echo $this->__('<a href="%s">Shopping Cart (0)</a>', $this->getUrl('checkout/cart')) ?>
+        <?php echo $this->__('<a href="%s">Shopping Cart <span class="count">0</span></a>', $this->getUrl('checkout/cart')) ?>
     <?php endif ?>
 
 

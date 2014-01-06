@@ -52,35 +52,38 @@ if(Mage::getStoreConfig('responseconfiguration/responseconfigs/grid1280')){
 ?>
 
 
-	<?php //echo $this->getChildHtml('after_body_start') ?>
+	<?php echo $this->getChildHtml('after_body_start') ?>
 	
-	<header>
+	<header class="site-header">
 		<div class="container">
 			<?php echo $this->getChildHtml('header') ?>
 		</div><!--container-->
-		
-	</header>
+	</header><!-- .site-header -->
+	<div class="site-content">
+		<div class="container">
+			<div class="sixteen columns breadcrumbs">
+				<?php echo $this->getChildHtml('breadcrumbs') ?>
+			</div><!--breadcrumbs-->
+			
+			<div class="sixteen columns notices">
+				<?php echo $this->getChildHtml('global_notices') ?>
+			</div><!--notices-->
+	    	
+			<div class="sixteen columns 1col content">
+				<?php echo $this->getChildHtml('content') ?>
+			</div>
+			
+			<div class="clear"></div>
+			
+		</div><!-- .container -->
+	</div><!-- .site-content -->
 	
-	<div class="container">
-	
-		<div class="sixteen columns breadcrumbs">
-			<?php echo $this->getChildHtml('breadcrumbs') ?>
-		</div><!--breadcrumbs-->
-		
-		<div class="sixteen columns notices">
-			<?php echo $this->getChildHtml('global_notices') ?>
-		</div><!--notices-->
-	
-		<div class="sixteen columns 1col content">
-			<?php echo $this->getChildHtml('content') ?>
-		</div>		
-		
 	    <?php echo $this->getChildHtml('footer') ?>
 		
         
         <?php echo $this->getChildHtml('before_body_end') ?>
         <?php echo $this->getAbsoluteFooter() ?>
-	</div>        
+	</div>
 
 </body>
 </html>

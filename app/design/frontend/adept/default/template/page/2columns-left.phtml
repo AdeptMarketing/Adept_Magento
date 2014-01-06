@@ -49,39 +49,39 @@ if(Mage::getStoreConfig('responseconfiguration/responseconfigs/grid1280')){
 	?><body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>><?
 }
 ?>
-	<?php //echo $this->getChildHtml('after_body_start') ?>
+	<?php echo $this->getChildHtml('after_body_start') ?>
 	
-	<header>	
+	<header class="site-header">
 		<div class="container">
 			<?php echo $this->getChildHtml('header') ?>
 		</div><!--container-->
-	</header>
-	
-	<div class="container">
-	
-		<div class="sixteen columns breadcrumbs">
-			<?php echo $this->getChildHtml('breadcrumbs') ?>
-		</div><!--breadcrumbs-->
-		
-		<div class="sixteen columns notices">
-			<?php echo $this->getChildHtml('global_notices') ?>
-		</div><!--notices-->
-				
-		<div class="twelve columns col2l content">
-			<?php echo $this->getChildHtml('content') ?>
-		</div><!--content-->
+	</header><!-- .site-header -->
+	<div class="site-content">
+		<div class="container">
+			<div class="sixteen columns breadcrumbs">
+				<?php echo $this->getChildHtml('breadcrumbs') ?>
+			</div><!--breadcrumbs-->
+			
+			<div class="sixteen columns notices">
+				<?php echo $this->getChildHtml('global_notices') ?>
+			</div><!--notices-->
+					
+			<div class="twelve columns col2l content">
+				<?php echo $this->getChildHtml('content') ?>
+			</div><!--content-->
+        	
+			<div class="four columns leftcol">
+				<?php echo $this->getChildHtml('left') ?>
+			</div><!--LeftCol-->
+			
+			<div class="clear"></div>
+			
+		</div><!-- .container -->
+	</div><!-- .site-content -->
 
-		<div class="four columns leftcol">
-			<?php echo $this->getChildHtml('left') ?>
-		</div><!--LeftCol-->
-
-		
-	    <?php echo $this->getChildHtml('footer') ?>
-		
-        
-        <?php echo $this->getChildHtml('before_body_end') ?>
-        <?php echo $this->getAbsoluteFooter() ?>
-	</div>        
+    <?php echo $this->getChildHtml('footer') ?>
+    <?php echo $this->getChildHtml('before_body_end') ?>
+    <?php echo $this->getAbsoluteFooter() ?>     
 
 </body>
 </html>

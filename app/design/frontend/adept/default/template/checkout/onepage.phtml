@@ -58,3 +58,15 @@
     );
 //]]>
 </script>
+
+<!-- Analytics Tracking for individual steps / Adept --> 
+<script type="text/javascript">
+Checkout.prototype.gotoSection = function(section) {
+try {
+_gaq.push(['_trackPageview', '<?php echo $this->getUrl('checkout/onepage'); ?>' + section + '/']);
+} catch(err) { }
+section = $('opc-'+section);
+section.addClassName('allow');
+this.accordion.openSection(section);
+};
+</script>

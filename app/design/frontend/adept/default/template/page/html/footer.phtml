@@ -24,7 +24,9 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-	<footer class="sixteen columns">
+
+<footer class="site-footer">
+	<div class="container clearfix">
 		<div class="four columns about alpha">
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_about')->toHtml() ?> 
 		</div><!--about-->
@@ -40,7 +42,7 @@
 		<div class="four columns contact omega">
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_contact')->toHtml() ?> 
 		</div><!--contact info-->
-       
-        <address class="sixteen columns alpha omega">&copy; <?php echo date('Y'); ?> <?php echo $this->getCopyright() ?></address>
-	</footer>
-</div><!--Container-->
+    	
+    	<address class="sixteen columns alpha omega">&copy; <?php echo date('Y'); ?> <?php echo $this->getCopyright() ?></address>
+	</div><!-- .container -->
+</footer>

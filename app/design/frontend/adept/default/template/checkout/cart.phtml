@@ -174,7 +174,7 @@
                     <?php echo $this->getChildHtml('coupon') ?>
                     <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
             </div><!--coupon-shipping-->       
-        <? }else{ ?>
+        <?php }else{ ?>
             <div class="four columns totals omega  horizontal">
                 <?php echo $this->getChildHtml('totals'); ?>
                 <?php if(!$this->hasError()): ?>
@@ -198,6 +198,6 @@
                 <?php echo $this->getChildHtml('crosssell') ?>
             </div><!--crosssell--> 
 
-         <? } ?>
+         <?php } ?>
     </div>
 </div>

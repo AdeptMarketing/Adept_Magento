@@ -42,11 +42,9 @@
         <div class="eight columns alpha fieldset">
             <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>" />
             <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>" />
-            <h2 class="legend"><?php echo $this->__('Personal Information') ?></h2>
             <ul class="form-list">
-                <li class="fields">
-                    <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
-                </li>
+	            <li class="legend"><?php echo $this->__('Personal Information') ?></li>	
+                 <?php echo $this->getLayout()->createBlock('customer/widget_name')->setObject($this->getFormData())->setForceUseCustomerAttributes(true)->toHtml() ?>
                 <li>
                     <label for="email_address" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
                     <div class="input-box">
@@ -55,10 +53,8 @@
                 </li>
                 <?php if ($this->isNewsletterEnabled()): ?>
                 <li class="control">
-                    <div class="input-box">
-                        <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter') ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> class="checkbox" />
-                    </div>
-                    <label for="is_subscribed"><?php echo $this->__('Sign Up for Newsletter') ?></label>
+					<input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter') ?>" value="1" id="is_subscribed"<?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif; ?> class="checkbox" />
+					<label for="is_subscribed"><?php echo $this->__('Sign Up for Newsletter') ?></label>
                 </li>
                 <?php endif ?>
             <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
@@ -78,8 +74,8 @@
     <?php if($this->getShowAddressFields()): ?>
         <div class="eight columns omega fieldset">
             <input type="hidden" name="create_address" value="1" />
-            <h2 class="legend"><?php echo $this->__('Address Information') ?></h2>
             <ul class="form-list">
+				<li class="legend"><?php echo $this->__('Address Information') ?></li>
                 <li class="fields">
                     <div class="field">
                         <label for="company"><?php echo $this->__('Company') ?></label>
@@ -151,31 +147,25 @@
         </div>
     <?php endif; ?>
         <div class="eight columns omega fieldset">
-            <h2 class="legend"><?php echo $this->__('Login Information') ?></h2>
             <ul class="form-list">
-                <li class="fields">
-                    <div class="field">
-                        <label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
-                        <div class="input-box">
-                            <input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
-                        <div class="input-box">
-                            <input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="input-text required-entry validate-cpassword" />
-                        </div>
-                    </div>
-                </li>
+	            <li class="legend"><?php echo $this->__('Login Information') ?></li>	
+                <li>
+					<label for="password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+					<input type="password" name="password" id="password" title="<?php echo $this->__('Password') ?>" class="input-text required-entry validate-password" />
+				</li>
+				<li>
+					<label for="confirmation" class="required"><em>*</em><?php echo $this->__('Confirm Password') ?></label>
+					<input type="password" name="confirmation" title="<?php echo $this->__('Confirm Password') ?>" id="confirmation" class="input-text required-entry validate-cpassword" />
+				</li>
                 <?php echo $this->getChildHtml('form.additional.info'); ?>
                 <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+				<li class="controls clearfix">
+					<p class="required"><?php echo $this->__('* Required Fields') ?></p>
+					<!-- <a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a> -->
+					<button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+				</li>
             </ul>
             <?php echo $this->getChildHtml('persistent.remember.me.tooltip'); ?>
-        </div>
-        <div class="buttons-set">
-            <p class="required"><?php echo $this->__('* Required Fields') ?><br/>
-            <a href="<?php echo $this->escapeUrl($this->getBackUrl()) ?>" class="back-link"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
-            <button type="submit" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
         </div>
         <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
             <input name="context" type="hidden" value="checkout" />
